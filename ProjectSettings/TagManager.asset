@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Animal
+  - Pizza
   layers:
   - Default
   - TransparentFX

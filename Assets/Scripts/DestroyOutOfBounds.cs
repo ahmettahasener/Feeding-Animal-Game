@@ -1,18 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    private float topBound = 30.0f;
-    private float lowerBound = -10.0f;
-    private float nearBound = 30.0f;
-    private GameManager gameManager;
+    private float topBound = 30;
+    private float lowerBound = -10;
+    private float edgeBound = 30;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 
@@ -21,22 +19,29 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
         if (transform.position.z > topBound)
         {
-            Destroy(gameObject); //pizzayý ekran sýnýfýrýný aþýnca yok et
+            // Instead of destroying the projectile when it leaves the screen
+            //Destroy(gameObject);
+
+            // Just deactivate it
+            gameObject.SetActive(false);
+
         }
-        else if(transform.position.z < lowerBound)
+        else if (transform.position.z < lowerBound)
         {
-            Destroy(gameObject);//hayvanlarý sýnýrý aþýnca yok et
-            gameManager.AddLives(-1);
+            Debug.Log("Game Over!");
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
-        if (transform.position.x > nearBound)
+        else if (transform.position.x < -edgeBound)
         {
-            Destroy(gameObject);
-            //gameManager.AddLives(-1);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
-        if (transform.position.x < -nearBound)
+        else if (transform.position.x > edgeBound)
         {
-            Destroy(gameObject);
-            //gameManager.AddLives(-1);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
+
     }
 }

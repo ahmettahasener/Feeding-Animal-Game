@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68104548}
   - component: {fileID: 68104549}
+  - component: {fileID: 68104550}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -171,6 +172,21 @@ MonoBehaviour:
   - {fileID: 3772297810587649047, guid: 109bb543ca45efc44a7a4311070d37a5, type: 3}
   - {fileID: 3875357140639472434, guid: 8618c55cbd2508346a90ae8bae1791be, type: 3}
   horse: {fileID: 2239967757247618573, guid: f72499f90acccf346b7290c2f56cddce, type: 3}
+--- !u!114 &68104550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68104547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c0e1f24e2ce4a5b9bf1f3a7499cd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 6097738824837313438, guid: a4948c734d148654e88d648f22bd5a83, type: 3}
+  amountToPool: 20
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,16 +1296,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1868907404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cfd3690eab677449af9d9a5a5b009a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e917c52987daa41af6a0305d9813c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  xRange: 10
-  zRange: 10
   projectilePrefab: {fileID: 6097738824837313438, guid: a4948c734d148654e88d648f22bd5a83, type: 3}
-  offset: {x: 0, y: 0, z: 1}
-  verticalInput: 0
-  horizontalInput: 0
 --- !u!65 &1868907408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1382,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6097738824837313438, guid: a4948c734d148654e88d648f22bd5a83, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Pizza
       objectReference: {fileID: 0}
     - target: {fileID: 6097738824837672894, guid: a4948c734d148654e88d648f22bd5a83, type: 3}
       propertyPath: m_RootOrder

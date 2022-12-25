@@ -21,16 +21,16 @@ public class DetectCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !gameObject.CompareTag("Pizza"))
         {
             Debug.Log("Game Over");
             gameManager.AddLives(-1);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if (other.CompareTag("Animal"))
         {
             gameManager.AddScore(5);
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Destroy(other.gameObject);
         }
 
